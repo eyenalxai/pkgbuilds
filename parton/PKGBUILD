@@ -1,5 +1,5 @@
 pkgname=parton
-pkgver=0.1.1
+pkgver=0.1.2
 pkgrel=1
 pkgdesc="Run Windows executables in a running game's Proton context"
 arch=('x86_64')
@@ -9,7 +9,7 @@ depends=('gcc-libs')
 makedepends=('cargo')
 options=('!debug' 'strip')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('a1dc6afb70f1a2cd20157d1d54fbe44fda44175936d065db9d698d463abb8015')
+sha256sums=('7c84d7de09c8f26b3b300e695b0d1f5bada74049932adb97d5be3946715e6407')
 
 prepare() {
   cd "$pkgname-$pkgver"
