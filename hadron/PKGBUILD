@@ -1,0 +1,30 @@
+pkgname=hadron
+pkgver=0.2.3
+pkgrel=1
+pkgdesc="Launch Steam games with alternative executables through Proton"
+arch=('x86_64')
+url="https://github.com/eyenalxai/hadron"
+license=('MIT')
+depends=('gcc-libs')
+makedepends=('cargo')
+options=('!debug' 'strip')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
+sha256sums=('4531f29e13320f7f26329b5321d82f7f1be45cee56edf1f808c622d0a04aec82')
+
+prepare() {
+  cd "$pkgname-$pkgver"
+  export RUSTUP_TOOLCHAIN=stable
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  export RUSTUP_TOOLCHAIN=stable
+  export CARGO_TARGET_DIR=target
+  cargo build --frozen --release --all-features
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  install -Dm0755 -t "$pkgdir/usr/bin/" "target/release/$pkgname"
+}
