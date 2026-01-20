@@ -1,5 +1,5 @@
 pkgname=pfx
-pkgver=0.2.3
+pkgver=0.2.4
 pkgrel=1
 pkgdesc="Run Windows executables in a running game's Proton context"
 arch=('x86_64')
@@ -9,7 +9,7 @@ depends=('gcc-libs')
 makedepends=('cargo')
 options=('!debug' 'strip')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('6b319b77f1bf6bce8d29f8d8fcc6f5102a4fe39d56cd9b2bf3722c33ae1c9139')
+sha256sums=('4850096cc10544271fd63ef0cadf566fa8341844ba08a7de1c39227569637bef')
 
 prepare() {
   cd "$pkgname-$pkgver"
