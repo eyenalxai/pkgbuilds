@@ -1,15 +1,15 @@
-pkgname=parton
-pkgver=0.2.2
+pkgname=pfx
+pkgver=0.2.3
 pkgrel=1
 pkgdesc="Run Windows executables in a running game's Proton context"
 arch=('x86_64')
-url="https://github.com/eyenalxai/parton"
+url="https://github.com/eyenalxai/pfx"
 license=('MIT')
 depends=('gcc-libs')
 makedepends=('cargo')
 options=('!debug' 'strip')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('3a6c761fbf41d722faaa947cbd7835526699ff17f6be1e7307775d867f70f66f')
+sha256sums=('6b319b77f1bf6bce8d29f8d8fcc6f5102a4fe39d56cd9b2bf3722c33ae1c9139')
 
 prepare() {
   cd "$pkgname-$pkgver"
