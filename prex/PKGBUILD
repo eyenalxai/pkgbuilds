@@ -1,15 +1,15 @@
 pkgname=prex
-pkgver=0.2.7
+pkgver=0.4.2
 pkgrel=1
 pkgdesc="Run Windows executables in a running game's Proton context"
 arch=('x86_64')
 url="https://github.com/eyenalxai/${pkgname}"
 license=('MIT')
-depends=('gcc-libs')
+depends=('gcc-libs' 'sqlite')
 makedepends=('cargo')
 options=('!debug' 'strip')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('dc77f201a21c0cd9787e339ce76ca36bf1eaa4e856fc04dd198b77fbf9951b74')
+sha256sums=('7ef1054b47aafbc0cfbab0144e905e9374f73a123e0300680c0c6c7761c1c905')
 
 prepare() {
   cd "$pkgname-$pkgver"
@@ -27,4 +27,5 @@ build() {
 package() {
   cd "$pkgname-$pkgver"
   install -Dm0755 -t "$pkgdir/usr/bin/" "target/release/$pkgname"
+  install -Dm0644 -t "$pkgdir/usr/share/applications/" "$pkgname.desktop"
 }
