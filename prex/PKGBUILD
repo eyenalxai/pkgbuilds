@@ -1,5 +1,5 @@
 pkgname=prex
-pkgver=0.4.2
+pkgver=0.4.3
 pkgrel=1
 pkgdesc="Run Windows executables in a running game's Proton context"
 arch=('x86_64')
@@ -9,7 +9,7 @@ depends=('gcc-libs' 'sqlite')
 makedepends=('cargo')
 options=('!debug' 'strip')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('7ef1054b47aafbc0cfbab0144e905e9374f73a123e0300680c0c6c7761c1c905')
+sha256sums=('0967fc568b244f851f0312fa5507704fe44d808862ceac9e9ac4fff769de5e8c')
 
 prepare() {
   cd "$pkgname-$pkgver"
