@@ -1,15 +1,15 @@
-pkgname=pfx
-pkgver=0.2.6
+pkgname=prex
+pkgver=0.2.7
 pkgrel=1
 pkgdesc="Run Windows executables in a running game's Proton context"
 arch=('x86_64')
-url="https://github.com/eyenalxai/pfx"
+url="https://github.com/eyenalxai/${pkgname}"
 license=('MIT')
 depends=('gcc-libs')
 makedepends=('cargo')
 options=('!debug' 'strip')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('4bd57de862961fa4780d7372835464cc65d496c6f5174f1cafe6726c14faa97c')
+sha256sums=('dc77f201a21c0cd9787e339ce76ca36bf1eaa4e856fc04dd198b77fbf9951b74')
 
 prepare() {
   cd "$pkgname-$pkgver"
